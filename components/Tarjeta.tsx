@@ -1,5 +1,5 @@
 import { useState } from "react";
-import { Pressable, StyleSheet, Text } from "react-native";
+import { Pressable, StyleSheet, Text, View } from "react-native";
 
 // La funcion randomHexColor se la pedí a GPT
 function randomHexColor(currentColor: string): string {
@@ -24,20 +24,29 @@ export const Tarjeta = (props: { texto: string }) => {
 
     return (
         <>
-            <Pressable style={styles.cardStyles} onPress={cambio}>
-                <Text style={styles.textStyles}>{props.texto}</Text>
-            </Pressable>
+            <View style={styles.viewStyles}>
+                <Pressable style={styles.cardStyles} onPress={cambio}>
+                    <Text style={styles.textStyles}>{props.texto}</Text>
+                </Pressable>
+            </View>
         </>
     );
 };
 
 const myStyles = (colorFondo: string, colorLetra: string) => (
     StyleSheet.create({
-        cardStyles: {
-            backgroundColor: colorFondo,
-            flex: 1,
+        viewStyles: {
+            width: "25%",
+            height: "10%",
             justifyContent: "center",
             alignItems: "center"
+        },
+        cardStyles: {
+            backgroundColor: colorFondo,
+            justifyContent: "center",
+            alignItems: "center",
+            height: "100%",
+            width: "80%"
         },
         textStyles: {
             color: colorLetra

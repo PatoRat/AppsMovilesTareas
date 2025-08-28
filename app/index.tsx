@@ -1,15 +1,10 @@
 import { Tarjeta } from "@/components/Tarjeta";
-import { View } from "react-native";
+import { StyleSheet, View } from "react-native";
 
 export default function Index() {
   return (
     <View
-      style={{
-        flex: 1,
-        justifyContent: "center",
-        alignItems: "center",
-        flexDirection: "row"
-      }}
+      style={ styles.viewStyles }
     >
       <Tarjeta texto="Hola" />
       <Tarjeta texto="Me" />
@@ -18,3 +13,11 @@ export default function Index() {
     </View>
   );
 }
+const styles = StyleSheet.create({
+  viewStyles: {
+    flex: 1,
+    justifyContent: "center",
+    alignItems: "center",
+    flexDirection: "row"
+  }
+});
