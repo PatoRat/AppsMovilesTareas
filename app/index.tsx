@@ -1,4 +1,5 @@
-import { Text, View } from "react-native";
+import { Tarjeta } from "@/components/Tarjeta";
+import { View } from "react-native";
 
 export default function Index() {
   return (
@@ -7,9 +8,13 @@ export default function Index() {
         flex: 1,
         justifyContent: "center",
         alignItems: "center",
+        flexDirection: "row"
       }}
     >
-      <Text>Edit app/index.tsx to edit this screen.</Text>
+      <Tarjeta texto="Hola" />
+      <Tarjeta texto="Me" />
+      <Tarjeta texto="Llamo" />
+      <Tarjeta texto="Pato" />
     </View>
   );
 }
